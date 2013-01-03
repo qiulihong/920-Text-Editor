@@ -80,6 +80,7 @@ public class TabWidget extends LinearLayout {
     private void initTabWidget(final Context context) {
         // Deal with focus, as we don't want the focus to go by default
         // to a tab other than the current tab
+    	// TODO: didn't find any difference if set it to false - Leon
         setFocusable(true);
         View mView = (View)LayoutInflater.from(context).inflate(R.layout.tab_menu, null);
         //不能这么用，一定要传正确的context，不然无法点其它地方关闭菜单
@@ -138,6 +139,7 @@ public class TabWidget extends LinearLayout {
 
     /**
      * Returns the tab indicator view at the given index.
+     * simply encapsulate ViewGroup's method: getChildAt(int index)
      *
      * @param index the zero-based index of the tab indicator view to return
      * @return the tab indicator view at the given index
@@ -148,6 +150,9 @@ public class TabWidget extends LinearLayout {
     }
 
     /**
+     * return count of tabs
+     * simply encapsulate ViewGroup's method: getChildCount()
+     * 
      * Returns the number of tab indicator views.
      * @return the number of tab indicator views.
      */
